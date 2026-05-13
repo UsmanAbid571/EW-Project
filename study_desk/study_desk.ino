@@ -99,24 +99,27 @@ void presenceControl()
 
   if(motion == LOW)
   {
-  
-    analogWrite(LAMP,0);
+    digitalWrite(LED1, LOW);
+    digitalWrite(LED2, LOW);
   }
   else
   {
     if(lightValue > 700) // DARK
     {
-      analogWrite(LAMP,255);
+      digitalWrite(LED1, HIGH);
+      digitalWrite(LED2, HIGH);
     }
 
     else if(lightValue > 300) // MEDIUM
     {
-      analogWrite(LAMP,130);
+      digitalWrite(LED1, HIGH);
+      digitalWrite(LED2, LOW);
     }
 
     else // BRIGHT
     {
-      analogWrite(LAMP,0);
+      digitalWrite(LED1, LOW);
+      digitalWrite(LED2, LOW);
     }
   }
 }
